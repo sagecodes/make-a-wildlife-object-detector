@@ -1,30 +1,110 @@
-Description:
+## My goals:
 
 My Test Case:
 
-Collecting the data:
+Geese
 
-Model Selection
+Lots of tutorials on making an object detector
+
+not many on making your own dataset and how to work with it for different programs
+
+
+## Collecting the data:
+
+I used my smart phone
+
+Often you reduce the resolution during your model training process, so super high resolution doesn't matter too much
+
+
+## Model Selection
+
+Different types of computer vision applications require different models
+
+#### Model types
+
+SSD
+Yolo
+Mask - R-CNN
+CNN
+
+#### Transer learning
+
+CNNs basics
+Weights
+Imagenet dataset
+Coco dataset
+
+Minimum 200 images rule of thumb for transfer learning
+May need thousands without transfer learnin
+
+#### Implementations
+
+I chose to use ones included in tensorflows repo
+
+TF & Python versions
+
+
+## Overcome a limited dataset
 
 Creating the synthetic dataset
 
-Labeling the data 
+Different backgrounds, rotation, positions, object variations(cow example)
 
-Training the model
+## Labeling the data 
+
+Different type of labels. 
+
+- Image segementation
+- Object detection
+- Classification
+
+
+I chose hyper label
+
+
+Always check your annotations!
+
+#### 
+
+Use openCV to read the annotations
+
+## Training the model
+
+I used models in tensorflows library
 
 Tuning & What I learned during model training
 
-Running the model / Deploying
+tutorial here
 
-Result:
+changes to work with different annotations
 
-Future improvements:
 
-Resources:
+## Running the model / Deploying
+
+Results:
+
+example without my living room
+
+
+## Future improvements:
+
+Make synthtic datsets with python
+
+## Stay connected:
+
+linkedin
+twitter
+email
+site
+
+## Resources:
 
 I hope this inspired you to make your own object detector!
 
 Scripts I used:
 
 Useful Instructions:
+https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets
+
+Make synthtic datsets with python
 
