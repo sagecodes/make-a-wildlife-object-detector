@@ -61,12 +61,15 @@ Different type of labels.
 
 I chose hyper label
 
-
 Always check your annotations!
 
-#### 
+#### OpenCV annotation check
+
+Show script 
 
 Use openCV to read the annotations
+
+Not doing this has cost me hours before... Don't do the same thing....
 
 ## Training the model
 
@@ -89,6 +92,10 @@ example without my living room
 ## Future improvements:
 
 Make synthtic datsets with python
+
+Deploy on pi
+
+TF JS
 
 ## Stay connected:
 
