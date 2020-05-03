@@ -110,8 +110,18 @@ I hope this inspired you to make your own object detector!
 
 Scripts I used:
 
+
+
 Useful Instructions:
-https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets
+Step by step tutorials for setting up a tensorflow Object detector:
+https://gilberttanner.com/blog/creating-your-own-objectdetector
+https://www.youtube.com/watch?v=HjiBbChYRDw
+
+Another good tensorflow object tutorial
+https://www.youtube.com/watch?v=Rgpfk6eYxJA&t=1024s
 
 Make synthtic datsets with python
+https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets
 
+Racoon datset exmaple:
+https://github.com/datitran/raccoon_dataset
