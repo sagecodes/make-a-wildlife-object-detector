@@ -185,6 +185,71 @@ boudning boxes
 
 XML Example:
 
+```xml
+<annotation>
+  <folder>GeneratedData_Train</folder>
+  <filename>3.png</filename>
+  <source>
+    <database>3</database>
+  </source>
+  <size>
+    <width>800</width>
+    <height>600</height>
+    <depth>Unknown</depth>
+  </size>
+  <segmented>0</segmented>
+  <object>
+    <name>goose</name>
+    <pose>Unknown</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <occluded>0</occluded>
+    <bndbox>
+      <xmin>159.28430879566355</xmin>
+      <xmax>342.9821219169359</xmax>
+      <ymin>219.6319686872721</ymin>
+      <ymax>405.6469286512451</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>goose</name>
+    <pose>Unknown</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <occluded>0</occluded>
+    <bndbox>
+      <xmin>537.1769383697813</xmin>
+      <xmax>660.7554380746769</xmax>
+      <ymin>55.55722749247779</ymin>
+      <ymax>179.5672008017932</ymax>
+    </bndbox>
+  </object>
+  <object>
+    <name>goose</name>
+    <pose>Unknown</pose>
+    <truncated>0</truncated>
+    <difficult>0</difficult>
+    <occluded>0</occluded>
+    <bndbox>
+      <xmin>84.85088007113569</xmin>
+      <xmax>139.24456192532307</xmax>
+      <ymin>4.522350222409504</ymin>
+      <ymax>82.74403297229314</ymax>
+    </bndbox>
+  </object>
+</annotation>
+```
+
+Converting to a CSV file.
+
+You could skip the step of generating a CSV file and directly create a TF Record
+but I've found having a CSV file helpful in the past.
+
+- A chance to pause and check your data
+- If your labeling tool doesn't save a project, you can append new annotation
+to your CSV file.
+
+
 ```python
 def xml_to_csv(path):
     xml_list = []
@@ -224,9 +289,37 @@ time debugging.
 
 Use openCV to read the annotations
 
+```python
+# %%
+import cv2
+import pandas as pd
+from PIL import Image
+
+# %%
+full_labels = pd.read_csv('train_labels.csv')
+
+# %%
+full_labels.head(10)
+
+# %%
+def draw_boxes(image_name):
+    selected_value = full_labels[full_labels.filename == image_name]
+    img = cv2.imread('train/{}'.format(image_name))
+    for index, row in selected_value.iterrows():
+        img = cv2.rectangle(img, (row['xmin'], row['ymin']), (row['xmax'], row['ymax']), (0, 255, 0), 3)
+    return img
+
+# %%
+Image.fromarray(draw_boxes('20200320_180628.jpg'))
+
+# %%
+Image.fromarray(draw_boxes('20200320_180651.jpg'))
 ```
-Show script 
-```
+
+![reading in XML wrong](pictures/wrong_read.png)
+
+![reading in XML right](pictures/right_read.png)
+
 
 I'm guilty of not checking and wasting hours debugging. because I was "sure"
 I was reading them correctly.
@@ -288,13 +381,16 @@ But you can change them here:
 
 # Results
 
+
+
 Example without synthetic dataset:
+
+Let's say now our goal is to detect geese in my apartment
 
 I'm a goose!
 
 transfer learning we didn't do a good enough job of telling it what WASN't a
 goose
-
 
 
 
