@@ -23,7 +23,7 @@ of seattle!
 
 Where are you watching this from right now? 
 
-Thank you all for coming tonight!
+**Thank you all for coming tonight!**
 
 
 
@@ -31,16 +31,19 @@ Thank you all for coming tonight!
 
 I was thinking of ways to bring in sponsors to virtual events. 
 
-[Hyperlabel]() is a tool I used in this project and they agreed to be a
-sponsor!
+[hyperlabel](https://hyperlabel.com/) is the image labeling tool I used in this 
+project and they agreed to be a sponsor!
 
-Hyperlabel will be givingh 4 winners $25 each for door dash to help support 
-your favorite local restaurants 
-
-Thank you [hyperlabel]()!!!
+Hyperlabel will be giving 4 winners $25 each for door dash to help support 
+your favorite local restaurants. 
 
 Enter to win here: [link]()
 
+Thank you [hyperlabel](https://hyperlabel.com/)!!!
+
+[![hyperlabel image labeling logo](pictures/hyperLabelLogo.png)](https://hyperlabel.com/)
+
+--------------
 
 # Data
 
@@ -80,38 +83,16 @@ They don't have much variation in appearance.
 
 but I still need to take in account the first two 
 
-pics:
+In total I only took 87 photos. Many were very similar.
 
-GEESE PICS
-
-Baby geese picture!
+> Example pictures:
 
 
 
 
-
-
-
-
-
-
-
-Resizing the dataset:
-
-Even though you usually resize in during loading your dataset for training
-it can help speed things up resizing your images before loading into memory. 
-
-Resize script:
-
-```
-Resize script here
-```
-
-
-
-
-
-Total amount of pictures collected
+> Not part of the data set, but the geese recently had babies!
+![baby geese](pictures/baby2.jpg)
+![baby geese](pictures/baby1.jpg)
 
 
 
@@ -136,10 +117,9 @@ asking how can I automate it?
 Hyper Label future feature?
 
 
-We're going to explore the results of trained models with and without synthetic
-datasets containing humans 
 
-
+we're going to come back to creating more extreme synthetic data
+after our initial training. 
 
 
 ### data augmentation
@@ -149,6 +129,20 @@ You may already be familiar with a more widely used concept of data augmentation
 What data augmentation is:
 
 What it isn't:
+
+
+
+
+## Resizing the dataset:
+
+Even though you usually resize in during loading your dataset for training
+it can help speed things up resizing your images before loading into memory. 
+
+Resize script:
+
+```
+Resize script here
+```
 
 
 ## Labeling the data 
@@ -191,7 +185,7 @@ boudning boxes
 
 XML Example:
 
-```
+```python
 def xml_to_csv(path):
     xml_list = []
     for xml_file in glob.glob(path + '/*.xml'):
@@ -303,20 +297,26 @@ goose
 
 
 
+
+
 Example with synthetic dataset:
 
 
 ## Retrainig with synthtic dataset of living room
 
-Results:
+Even with out small dataset we did a pretty good job of telling our model
+what a goose IS.
 
-example without my living room
+But we didn't do a good job of telling it what a goose ISN"T.
+
+We want to add in some noise to the data, like objects and people so as the
+model is training it can learn when it makes a mistake on them.
 
 
 
 ## Future improvements:
 
-Make synthtic datsets with python
+Make much more synthetic data with python
 
 
 # Wrap up
@@ -325,9 +325,7 @@ Make synthtic datsets with python
 
 I hope this inspired you to make your own object detector or get started with computer vision!
 
-## Hyper Label Give away
-
-Again, thank you to hyper label fo sponsoring
+And how powerful sythetic data sets have the potential to be!
 
 ## Stay connected:
 
@@ -338,6 +336,10 @@ linkedin
 twitter
 email
 site
+
+## Hyper Label Give away
+
+Again, thank you to hyper label fo sponsoring
 
 ## Useful Resources:
 
