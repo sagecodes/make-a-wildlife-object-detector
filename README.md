@@ -91,7 +91,7 @@ In total I only took 87 photos. Many were very similar.
 
 
 > Not part of the data set, but the geese recently had babies!
-![baby geese](pictures/baby2.jpg)
+![baby geese](pictures/baby2.jpg =250x250)
 ![baby geese](pictures/baby1.jpg)
 
 
@@ -140,8 +140,23 @@ it can help speed things up resizing your images before loading into memory.
 
 Resize script:
 
-```
-Resize script here
+```python
+from PIL import Image
+import os
+import argparse
+
+def rescale_images(directory, size):
+    for img in os.listdir(directory):
+        im = Image.open(directory+img)
+        im_resized = im.resize(size, Image.ANTIALIAS)
+        im_resized.save(directory+img)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Rescale images")
+    parser.add_argument('-d', '--directory', type=str, required=True, help='Directory containing the images')
+    parser.add_argument('-s', '--size', type=int, nargs=2, required=True, metavar=('width', 'height'), help='Image size')
+    args = parser.parse_args()
+    rescale_images(args.directory, args.size)
 ```
 
 
@@ -324,6 +339,7 @@ Image.fromarray(draw_boxes('20200320_180651.jpg'))
 I'm guilty of not checking and wasting hours debugging. because I was "sure"
 I was reading them correctly.
 
+--------------
 
 # Training 
 
@@ -378,10 +394,9 @@ I started with default settings
 
 But you can change them here:
 
+--------------
 
 # Results
-
-
 
 Example without synthetic dataset:
 
@@ -414,6 +429,7 @@ model is training it can learn when it makes a mistake on them.
 
 Make much more synthetic data with python
 
+--------------
 
 # Wrap up
 
@@ -428,10 +444,11 @@ And how powerful sythetic data sets have the potential to be!
 Please feel free to reach out to me with any questions. 
 I love helping other learn.
 
-linkedin
-twitter
-email
-site
+this github repo: [goose.sage.codes](https://github.com/sagecodes/make-a-wildlife-object-detector)
+linkedin: [Sage Elliott](https://www.linkedin.com/in/sageelliott/)
+twitter: [@sagecodes](https://twitter.com/sagecodes)
+site: [sageelliott.com](https://sageelliott.com/)
+
 
 ## Hyper Label Give away
 
@@ -439,7 +456,7 @@ Again, thank you to hyper label fo sponsoring
 
 ## Useful Resources:
 
-- [Hyper Label: Image labeling]() used for labeling the images
+- [Hyper Label: Image labeling](https://hyperlabel.com/) used for labeling the images
 
 - [Tensorflow object detection setup guide](https://gilberttanner.com/blog/creating-your-own-objectdetector)
 
