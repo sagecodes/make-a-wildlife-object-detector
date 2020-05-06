@@ -86,12 +86,15 @@ but I still need to take in account the first two
 In total I only took 87 photos. Many were very similar.
 
 > Example pictures:
-
-
+![](pictures/collect1.jpg)
+![](pictures/collect2.jpg)
+![](pictures/collect3.jpg)
+![](pictures/collect4.jpg)
+![](pictures/collect5.jpg)
 
 
 > Not part of the data set, but the geese recently had babies!
-![baby geese](pictures/baby2.jpg =250x250)
+![baby geese](pictures/baby2.jpg)
 ![baby geese](pictures/baby1.jpg)
 
 
@@ -101,12 +104,14 @@ In total I only took 87 photos. Many were very similar.
 
 ### Synthetic data 
 
-Creating the synthetic dataset
+What is sythetic data
 
-Different backgrounds, rotation, positions, object variations(cow example)
+Types of synthetic
 
 Example use cases of synthtic datasets
 
+
+Different backgrounds, rotation, positions, object variations(cow example)
 
 I think this idea is one of the coolest things, it's gaining traction
 but I'm still surprised that it's not talked about more!
@@ -114,12 +119,18 @@ but I'm still surprised that it's not talked about more!
 This example I made my synthetic dataset manually, but you're probably already
 asking how can I automate it?
 
-Hyper Label future feature?
-
-
+### Creating our own sythetic data set
 
 we're going to come back to creating more extreme synthetic data
 after our initial training. 
+
+
+![](pictures/single_goose.png)
+
+![](pictures/syn_beach1.png)
+![](pictures/syn_swim1.png)
+![](pictures/syn_swim3.png)
+![](pictures/syn_bridge.png)
 
 
 ### data augmentation
@@ -190,13 +201,20 @@ keep in mind that every labeler may have slightly different annotation generatio
 
 What labeling looks like
 
-Understanding the annotations
+ADD IMAGES OF USING HYPER LABEL & MAKE SCHEMA
+
+![](pictures/image_bounding_box.png)
+
+
+
 
 Export:
 You get different export options
 
 For me I'm using VOC pascal which exports the images and XML annotations of
 boudning boxes
+
+Understanding the annotations
 
 XML Example:
 
@@ -347,12 +365,11 @@ I was reading them correctly.
 
 Different types of computer vision applications require different models
 
-#### Model types
+#### Common Models for Object Detection
 
-SSD
-Yolo
-Mask R-CNN
-CNN
+- SSD
+- Yolo
+- Mask R-CNN
 
 #### Transfer learning
 
@@ -398,7 +415,24 @@ But you can change them here:
 
 # Results
 
-Example without synthetic dataset:
+our initial results
+
+Add Examples of just geese
+
+Make video GIF of geese classification
+
+
+![](pictures/round1_goose.png)
+
+![](pictures/round1_me_chair.png)
+
+![](pictures/round1_me_goose.png)
+
+![](pictures/round1_me.png)
+
+![](pictures/round1)
+
+
 
 Let's say now our goal is to detect geese in my apartment
 
@@ -406,11 +440,6 @@ I'm a goose!
 
 transfer learning we didn't do a good enough job of telling it what WASN't a
 goose
-
-
-
-
-Example with synthetic dataset:
 
 
 ## Retrainig with synthtic dataset of living room
@@ -424,10 +453,45 @@ We want to add in some noise to the data, like objects and people so as the
 model is training it can learn when it makes a mistake on them.
 
 
+## Create data set with living room:
+
+![](pictures/syn_label_living_room.png)
+![](pictures/syn_label_selfie1.png)
+![](pictures/syn_label_selfie2.png)
+![](pictures/syn_label_stone.png)
+![](pictures/syn_label_galvanize_roof.png)
+
+> Image from unsplash
+![](pictures/syn_unsplash_crowd.png)
+
+In total I added 10 new images with my living room or people in the background
+
+Lets re-train our model and see the results
+
+## Results:
+
+![](pictures/round2_me.png)
+
+![](pictures/round2_me_goose.png)
+
+![](pictures/round2_geese_google.png)
+
+It's not perfect
+
+![](pictures/round2_head_angle.png)
+
+![](pictures/round2_chair_is_goose.png)
+
+We could fix by adjusting the confidence 
+
 
 ## Future improvements:
 
-Make much more synthetic data with python
+more data
+
+more synthetic data. chairs
+
+
 
 --------------
 
