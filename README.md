@@ -1,4 +1,4 @@
-# Intro
+# Welcome!
 
 ## About this talk:
 
@@ -10,14 +10,25 @@ Lots of tutorials on making an object detector
 
 not many on making your own dataset and how to work with it for different programs
 
-
+Synthetic data
 
 ## About me:
+👋 Hello,  I'm [Sage Elliott](https://www.linkedin.com/in/sageelliott/).
+
+I'm a technical evangelist at [Galvanize](https://www.galvanize.com/) with experience creating computer vision systems for manufacturing quality assurance, architecture design generation, and wildlife monitoring. I love helping people learn new things.
+
+I'm really excited to have you here for this this talk!
+Originally I was going to give this talk in person at a python meetup in
+Seattle. Then 2020 happened... Hopefully doing this virtually will reach outside
+of seattle! 
+
+Where are you watching this from right now? 
+
+Thank you all for coming tonight!
 
 
 
-
-## give away
+## Give away
 
 Looking for ways to bring in sponsors to virtual events
 
@@ -81,8 +92,6 @@ Example use cases of synthtic datasets
 
 I think this idea is one of the coolest things, it's gaining traction
 but I'm still surprised that it's not talked about more!
-
-
 
 This example I made my synthetic dataset manually, but you're probably already
 asking how can I automate it?
