@@ -1,4 +1,6 @@
-## My goals:
+# Intro
+
+## About this talk:
 
 My Test Case:
 
@@ -9,17 +11,43 @@ Lots of tutorials on making an object detector
 not many on making your own dataset and how to work with it for different programs
 
 
+
+## About me:
+
+
+
+
+## give away
+
+Looking for ways to bring in sponsors to virtual events
+
+Hyper label is the tool I used to build this project and they agreed to be a
+sponsor!
+
+4 winners for door dash to help support your favorite local restaurants 
+
+Thank you hyperlabel!!!
+
+
+# Data
+
+The not always most fun, but maybe the most important. 
+
+In this case I actually had a lot of fun!
+
+
 ## Collecting the data:
 
-I used my smart phone
+I used my smart phone.
 
-Often you reduce the resolution during your model training process, so super high resolution doesn't matter too much
+Often you're going to reduce the resolution during your model training process, 
+so super high resolution doesn't matter too much.
 
-Think of angles
+When collecting think of what you want to capture:
 
-Think of positions 
-
-Think of variations
+- Think of angles
+- Think of positions 
+- Think of variations
 
 This example I am creating a dataset of canadian geese. Fortunately for me.
 They don't have much variation in appearance.
@@ -49,12 +77,17 @@ Creating the synthetic dataset
 
 Different backgrounds, rotation, positions, object variations(cow example)
 
+Example use cases of synthtic datasets
+
+I think this idea is one of the coolest things, it's gaining traction
+but I'm still surprised that it's not talked about more!
+
+
+
 This example I made my synthetic dataset manually, but you're probably already
 asking how can I automate it?
 
 Hyper Label future feature?
-
-
 
 ### data augmentation
 
@@ -97,9 +130,6 @@ classification
 
 What labeling looks like
 
-
-
-
 Understanding the annotations
 
 #### OpenCV annotation check
@@ -116,6 +146,9 @@ Show script
 
 I'm guilty of not checking and wasting hours debugging. because I was "sure"
 I was reading them correctly.
+
+
+# Training 
 
 ## Model Selection
 
@@ -145,16 +178,17 @@ you're doing with it.
 
 There are quite a few implementations for different model types. 
 
-I chose to use ones included in tensorflows offcial repo
+I chose to use ones included in tensorflows offcial repo. I feel like it's
+maybe the most approachable for most people
 
 Note that most of the models are under the research directory. These are not
 always offcially maintained. 
 
-TF & Python versions
-
 There is a great resource to get started with the included tensflow model here:
 
-Quick summary of setting up:
+Setup tips Quick summary of setting up:
+
+TF & Python versions
 
 
 More resources included at the end.
@@ -167,8 +201,6 @@ I started with default settings
 
 But you can change them here:
 
-
-
 Example without synthetic dataset:
 
 I'm a goose!
@@ -178,9 +210,7 @@ I'm a goose!
 Example with synthetic dataset:
 
 
-
-
-## Running the model / Deploying
+## Retrainig with synthtic dataset of living room
 
 Results:
 
@@ -191,34 +221,33 @@ example without my living room
 
 Make synthtic datsets with python
 
-Deploy on pi
 
-TF JS
+# Wrap up
+
+## Summary
+
+I hope this inspired you to make your own object detector or get started with computer vision!
 
 ## Stay connected:
+
+Please feel free to reach out to me with any questions. 
+I love helping other learn.
 
 linkedin
 twitter
 email
 site
 
-## Resources:
+## Useful Resources:
 
-I hope this inspired you to make your own object detector!
+- [Hyper Label: Image labeling]() used for labeling the images
+
+- [Tensorflow object detection setup guide](https://gilberttanner.com/blog/creating-your-own-objectdetector)
+
+- [Another good tensorflow object tutorial](https://www.youtube.com/watch?v=Rgpfk6eYxJA&t=1024s)
+
+- [Make synthetic datsets with python](https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets)
+
+- [Racoon detection blog post](https://github.com/datitran/raccoon_dataset)
 
 Scripts I used:
-
-
-Useful Instructions:
-Step by step tutorials for setting up a tensorflow Object detector:
-https://gilberttanner.com/blog/creating-your-own-objectdetector
-https://www.youtube.com/watch?v=HjiBbChYRDw
-
-Another good tensorflow object tutorial
-https://www.youtube.com/watch?v=Rgpfk6eYxJA&t=1024s
-
-Make synthtic datsets with python
-https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets
-
-Racoon datset exmaple:
-https://github.com/datitran/raccoon_dataset
