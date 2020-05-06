@@ -28,16 +28,19 @@ Thank you all for coming tonight!
 
 
 
-## Give away
+## Sponsorship & Give away
 
-Looking for ways to bring in sponsors to virtual events
+I was thinking of ways to bring in sponsors to virtual events. 
 
-Hyper label is the tool I used to build this project and they agreed to be a
+[Hyperlabel]() is a tool I used in this project and they agreed to be a
 sponsor!
 
-4 winners for door dash to help support your favorite local restaurants 
+Hyperlabel will be givingh 4 winners $25 each for door dash to help support 
+your favorite local restaurants 
 
-Thank you hyperlabel!!!
+Thank you [hyperlabel]()!!!
+
+Enter to win here: [link]()
 
 
 # Data
@@ -56,9 +59,19 @@ so super high resolution doesn't matter too much.
 
 When collecting think of what you want to capture:
 
-- Think of angles
-- Think of positions 
-- Think of variations
+- Object angles
+    - Side of the goose
+    - top of the goose
+
+- Object positions
+    - sitting goose
+    - swimming goose
+    - eating goose
+    - flying goose
+
+- Object variations
+    - baby goose
+    - color of goose 
 
 This example I am creating a dataset of canadian geese. Fortunately for me.
 They don't have much variation in appearance.
@@ -67,8 +80,7 @@ but I still need to take in account the first two
 
 pics:
 
-
-During this time I 
+GEESE PICS
 
 Baby geese picture!
 
@@ -78,6 +90,13 @@ Even though you usually resize in during loading your dataset for training
 it can help speed things up resizing your images before loading into memory. 
 
 Resize script:
+
+```
+Resize script here
+```
+
+Total amount of pictures collected
+
 
 
 ## Overcome a limited dataset
@@ -89,6 +108,8 @@ Creating the synthetic dataset
 Different backgrounds, rotation, positions, object variations(cow example)
 
 Example use cases of synthtic datasets
+
+
 
 I think this idea is one of the coolest things, it's gaining traction
 but I'm still surprised that it's not talked about more!
@@ -119,27 +140,64 @@ Some other label options you may see in computer vision
 - Keypoint
 - context
 
+
+
 Our case we want to do object detection. The boxes around the objects.
 
-There are several labeling options
+There are a couple good labeling options
 
 - hyperlabel
 - imagelabeler
 
-I chose hyper label
+I chose hyper label. Again shout out for them sponsoring tonight!
+
+Enter give away here [link]()
 
 keep in mind that every labeler may have slightly different annotation generation
-
-Labeling types:
-
-Bounding box
-Image segmentation
-classification
 
 
 What labeling looks like
 
 Understanding the annotations
+
+Export:
+You get different export options
+
+For me I'm using VOC pascal which exports the images and XML annotations of
+boudning boxes
+
+XML Example:
+
+```
+def xml_to_csv(path):
+    xml_list = []
+    for xml_file in glob.glob(path + '/*.xml'):
+        tree = ET.parse(xml_file)
+        root = tree.getroot()
+        for member in root.findall('object'):
+            value = (root.find('filename').text,
+                     int(root.find('size')[0].text),
+                     int(root.find('size')[1].text),
+                     member[0].text,
+                     int(round(float(member[5][0].text))),
+                     int(round(float(member[5][1].text))),
+                     int(round(float(member[5][2].text))),
+                     int(round(float(member[5][3].text)))
+                     )
+            xml_list.append(value)
+    column_name = ['filename', 'width', 'height', 'class', 'xmin', 'xmax', 'ymin', 'ymax']
+    xml_df = pd.DataFrame(xml_list, columns=column_name)
+    return xml_df
+def main():
+    for folder in ['train', 'test']:
+        image_path = os.path.join(os.getcwd(), ('images/' + folder))
+        xml_df = xml_to_csv(image_path)
+        xml_df.to_csv(('images/'+folder+'_labels.csv'), index=None)
+    print('Successfully converted xml to csv.')
+main()
+
+```
+
 
 #### OpenCV annotation check
 
