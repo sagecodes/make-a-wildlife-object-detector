@@ -2,15 +2,14 @@
 
 ## About this talk:
 
-My Test Case:
+There are lots of tutorials on making an object detector work with a pre-trained
+dataset, but not many on how to make your own datasets for object detection.
 
-Geese
+Over coming Synthetic data
 
-Lots of tutorials on making an object detector
+Wildlife detection and monitoring with a limited dataset that anyone with a camera or smart phone can create
 
-not many on making your own dataset and how to work with it for different programs
-
-Synthetic data
+I hope that no matter your experience you'll learn something new today!
 
 ## About me:
 👋 Hello,  I'm [Sage Elliott](https://www.linkedin.com/in/sageelliott/).
@@ -60,18 +59,21 @@ so super high resolution doesn't matter too much.
 When collecting think of what you want to capture:
 
 - Object angles
-    - Side of the goose
-    - top of the goose
+    - Side
+    - top
+    - back
+    - front
 
 - Object positions
-    - sitting goose
-    - swimming goose
-    - eating goose
-    - flying goose
+    - sitting
+    - swimming
+    - eating
+    - flying
 
 - Object variations
-    - baby goose
-    - color of goose 
+    - age
+    - color
+    - type  
 
 This example I am creating a dataset of canadian geese. Fortunately for me.
 They don't have much variation in appearance.
@@ -84,6 +86,16 @@ GEESE PICS
 
 Baby geese picture!
 
+
+
+
+
+
+
+
+
+
+
 Resizing the dataset:
 
 Even though you usually resize in during loading your dataset for training
@@ -95,11 +107,16 @@ Resize script:
 Resize script here
 ```
 
+
+
+
+
 Total amount of pictures collected
 
 
 
 ## Overcome a limited dataset
+
 
 ### Synthetic data 
 
@@ -110,7 +127,6 @@ Different backgrounds, rotation, positions, object variations(cow example)
 Example use cases of synthtic datasets
 
 
-
 I think this idea is one of the coolest things, it's gaining traction
 but I'm still surprised that it's not talked about more!
 
@@ -118,6 +134,13 @@ This example I made my synthetic dataset manually, but you're probably already
 asking how can I automate it?
 
 Hyper Label future feature?
+
+
+We're going to explore the results of trained models with and without synthetic
+datasets containing humans 
+
+
+
 
 ### data augmentation
 
@@ -225,10 +248,10 @@ Different types of computer vision applications require different models
 
 SSD
 Yolo
-Mask - R-CNN
+Mask R-CNN
 CNN
 
-#### Transer learning
+#### Transfer learning
 
 CNNs basics
 Weights
@@ -268,9 +291,15 @@ I started with default settings
 
 But you can change them here:
 
+
+# Results
+
 Example without synthetic dataset:
 
 I'm a goose!
+
+transfer learning we didn't do a good enough job of telling it what WASN't a
+goose
 
 
 
@@ -284,6 +313,7 @@ Results:
 example without my living room
 
 
+
 ## Future improvements:
 
 Make synthtic datsets with python
@@ -294,6 +324,10 @@ Make synthtic datsets with python
 ## Summary
 
 I hope this inspired you to make your own object detector or get started with computer vision!
+
+## Hyper Label Give away
+
+Again, thank you to hyper label fo sponsoring
 
 ## Stay connected:
 
