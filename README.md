@@ -124,13 +124,20 @@ asking how can I automate it?
 we're going to come back to creating more extreme synthetic data
 after our initial training. 
 
-
+> Single Goose Example
 ![](pictures/single_goose.png)
 
+> Background example:
+![](pictures/bridge.jpg)
+
+> Sythetic Examples:
 ![](pictures/syn_beach1.png)
 ![](pictures/syn_swim1.png)
 ![](pictures/syn_swim3.png)
 ![](pictures/syn_bridge.png)
+
+
+ADD PHOTOSHOP TIPS
 
 
 ### data augmentation
