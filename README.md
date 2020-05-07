@@ -240,7 +240,7 @@ Some other label options you may see in computer vision
 
 in our case we want to do object detection. The boxes around the objects.
 
-There are a couple good labeling options
+There are a couple good labeling options for bounding boxes
 
 - [HyperLabel](https://hyperlabel.com/)
 - [labelImg](https://github.com/tzutalin/labelImg)
@@ -418,7 +418,7 @@ Image.fromarray(draw_boxes('20200320_180628.jpg'))
 Image.fromarray(draw_boxes('20200320_180651.jpg'))
 ```
 
-> Original script from Dat Trans [raccoon_dataset](https://github.com/datitran/raccoon_dataset)
+> Original script from Dat's [raccoon_dataset](https://github.com/datitran/raccoon_dataset)
 
 
 ![reading in XML wrong](pictures/wrong_read.png)
@@ -453,7 +453,7 @@ Different types of computer vision applications require different models
 - Object detection
 - Fast
 
-[Yolo Explained](https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088)
+[YOLO Explained](https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088)
 
 [paper](https://arxiv.org/abs/1506.02640)
 
@@ -562,7 +562,7 @@ def create_tf_example(group, path):
     return tf_example
 
 ```
-> Original script from Dat Trans [raccoon_dataset](https://github.com/datitran/raccoon_dataset)
+> Original script from Dat's [raccoon_dataset](https://github.com/datitran/raccoon_dataset)
 
 
 ## Training the model
