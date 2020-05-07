@@ -247,7 +247,7 @@ Our case we want to do object detection. The boxes around the objects.
 There are a couple good labeling options
 
 - [HyperLabel](https://hyperlabel.com/)
-- [imagelabeler](https://github.com/tzutalin/labelImg)
+- [labelImg](https://github.com/tzutalin/labelImg)
 
 I chose HyperLabel. Again shout out for them sponsoring tonight!
 
@@ -422,6 +422,9 @@ Image.fromarray(draw_boxes('20200320_180628.jpg'))
 Image.fromarray(draw_boxes('20200320_180651.jpg'))
 ```
 
+> Original script from Dat Trans [raccoon_dataset](https://github.com/datitran/raccoon_dataset)
+
+
 ![reading in XML wrong](pictures/wrong_read.png)
 
 ![reading in XML right](pictures/right_read.png)
@@ -446,6 +449,7 @@ Different types of computer vision applications require different models
 - Fast
 
 [SSD exaplained](https://towardsdatascience.com/understanding-ssd-multibox-real-time-object-detection-in-deep-learning-495ef744fab)
+
 [paper](https://arxiv.org/abs/1512.02325)
 
 #### You Only Look Once (YOLO)
@@ -454,6 +458,7 @@ Different types of computer vision applications require different models
 - Fast
 
 [Yolo Explained](https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088)
+
 [paper](https://arxiv.org/abs/1506.02640)
 
 #### Mask R-CNN
@@ -464,28 +469,37 @@ Different types of computer vision applications require different models
 - Slower
 
 [Mask R-CNN explained](https://medium.com/@jonathan_hui/image-segmentation-with-mask-r-cnn-ebe6d793272)
+
 [Paper](https://arxiv.org/abs/1703.06870)
 
 
 #### A note on transfer learning
 
-Learned weights and convolution layers
+With most popular deep learning frameworks you can load pre-trained weights into
+your network. These have been trained extensivly on quite a few objects and animals.
+
+You can then adjust those weights during training to work for you specific data set.
+
+Think of it as not starting from zero.
 
 - [Imagenet dataset](http://www.image-net.org/)
 - [Coco dataset](http://cocodataset.org/#home)
 
-Minimum 200 images rule of thumb for transfer learning.
+
+A good rule of thumb is to start with a minimum 200 images transfer learning.
+But this can vary a lot depending on your data and the results you want. 
+
 Our goose dataset has less than 200 images, but over 200 instances of a goose.
 
-May need thousands without transfer learning. Keep in mind that synthetic data 
-may be a way to turn hundreds into thousands. Depends on you data and what
+without transfer learning you will probably need thousands of images and a lot more time. Keep in mind that synthetic data may be a way to turn hundreds into thousands. Depends on you data and what
 you're doing with it. 
 
 [Transfer Learning Explained](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a)
 
 #### Implementations
 
-There are quite a few implementations for different model types. 
+There are quite a few implementations for different model types and our datase
+should work with all of them. 
 
 I chose to use ones included in [tensorflows offcial repo](https://github.com/tensorflow/models/tree/master/research/object_detection).
 
