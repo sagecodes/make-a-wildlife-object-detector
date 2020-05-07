@@ -3,13 +3,13 @@
 ## About this talk:
 
 There are a lot of tutorials on making an object detector work with a pre-trained
-dataset, but not many on how to make your own datasets for object detection.
+data set, but not many on how to make your own data sets for object detection.
 
 We're going to talk about:
 
 - Collecting Data
 - Labeling your own data for object detection models
-- Overcoming several challenges by using Sythetic data sets.
+- Overcoming several challenges by using synthetic data sets.
 - Choosing a model
 
 
@@ -102,7 +102,7 @@ When collecting think of what you want to capture:
 If you have an idea for a project, I want you to think of some variations you
 might need to capture.
 
-This example I am creating a dataset of canadian geese. Fortunately for me.
+This example I am creating a data set of canadian geese. Fortunately for me.
 They don't have much variation in appearance.
 
 but I still need to take in account the first two 
@@ -125,7 +125,7 @@ I live near a park with plenty of geese so finding some was easy.
 
 
 
-## Overcome a limited dataset
+## Overcome a limited data set
 
 
 ### Synthetic data 
@@ -147,7 +147,7 @@ I think this idea is one of the coolest things, it's gaining traction
 but I'm still surprised that it's not talked about more!
 
 
-### Creating our own sythetic data set
+### Creating our own synthetic data set
 
 We're going to come back to creating more extreme synthetic data
 after our initial training to solve a new challenge which will show us how powerful
@@ -160,7 +160,7 @@ it can be.
 > Background example:
 ![](pictures/bridge.jpg)
 
-> Sythetic Examples:
+> synthetic Examples:
 ![](pictures/syn_beach1.png)
 ![](pictures/syn_swim1.png)
 ![](pictures/syn_swim3.png)
@@ -168,7 +168,7 @@ it can be.
 
 Photoshop tips:
 
-- Object selction
+- Object selection
 - Photoshop crop to content
 - save as a png (for transparent background)
 - Open up a background image in photoshop.
@@ -179,7 +179,7 @@ Photoshop tips:
 You may already be asking can I automate this? Well you can automate some of
 the generation and part of the labeling with python. Read these here for some ideas! 
 
-[Make synthetic datsets with python](https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets)
+[Make synthetic data sets with python](https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets)
 
 [Pyimagesearch: Face mask detection](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
 
@@ -191,14 +191,14 @@ You may already be familiar with a more widely used concept of data augmentation
 
 This allows you to make adjustments to your images when training, like flipping
 , skewing, lightness, ect... but it does not create a different environment like
-our sythetic data set.
+our synthetic data set.
 
 This is usually done while training the model
 
 
-## Resizing the dataset:
+## Resizing the data set:
 
-Even though you usually resize in during loading your dataset for training
+Even though you usually resize in during loading your data set for training
 it can help speed things up resizing your images before loading into memory. 
 
 Resize script:
@@ -227,18 +227,18 @@ if __name__ == '__main__':
 
 Different type of labels. 
 
-- Image segementation
+- Image segmentation
 - Object detection
 - Classification
 
 Some other label options you may see in computer vision
-- Keypoint
+- Key point
 - context
 
 ![](pictures/labeltypes.png)
 
 
-Our case we want to do object detection. The boxes around the objects.
+in our case we want to do object detection. The boxes around the objects.
 
 There are a couple good labeling options
 
@@ -275,7 +275,7 @@ There are several options for exporting. You will need to choose the right one
 for your application. 
 
 For me I'm exporting as VOC pascal which exports the images and matching XML 
-annotations of boudning boxes for each images.
+annotations of bounding boxes for each images.
 
 - goose1.jpg
 - goose1.xml
@@ -380,7 +380,7 @@ def main():
 main()
 
 ```
-> Original script from Dat Trans [raccoon_dataset](https://github.com/datitran/raccoon_dataset)
+> Original script from Dat's [raccoon_dataset](https://github.com/datitran/raccoon_dataset)
 
 
 ### Check your Annotations!
@@ -444,7 +444,7 @@ Different types of computer vision applications require different models
 - Object detection
 - Fast
 
-[SSD exaplained](https://towardsdatascience.com/understanding-ssd-multibox-real-time-object-detection-in-deep-learning-495ef744fab)
+[SSD explained](https://towardsdatascience.com/understanding-ssd-multibox-real-time-object-detection-in-deep-learning-495ef744fab)
 
 [paper](https://arxiv.org/abs/1512.02325)
 
@@ -472,20 +472,20 @@ Different types of computer vision applications require different models
 #### A note on transfer learning
 
 With most popular deep learning frameworks you can load pre-trained weights into
-your network. These have been trained extensivly on quite a few objects and animals.
+your network. These have been trained extensively  on quite a few objects and animals.
 
 You can then adjust those weights during training to work for you specific data set.
 
 Think of it as not starting from zero.
 
-- [Imagenet dataset](http://www.image-net.org/)
-- [Coco dataset](http://cocodataset.org/#home)
+- [Imagenet data set](http://www.image-net.org/)
+- [Coco data set](http://cocodataset.org/#home)
 
 
 A good rule of thumb is to start with a minimum 200 images transfer learning.
 But this can vary a lot depending on your data and the results you want. 
 
-Our goose dataset has less than 200 images, but over 200 instances of a goose.
+Our goose data set has less than 200 images, but over 200 instances of a goose.
 
 without transfer learning you will probably need thousands of images and a lot more time. Keep in mind that synthetic data may be a way to turn hundreds into thousands. Depends on you data and what
 you're doing with it. 
@@ -497,7 +497,7 @@ you're doing with it.
 There are quite a few implementations for different model types and our datase
 should work with all of them. 
 
-I chose to use ones included in [tensorflows offcial repo](https://github.com/tensorflow/models/tree/master/research/object_detection).
+I chose to use ones included in [tensorflows official repo](https://github.com/tensorflow/models/tree/master/research/object_detection).
 
 Note that most of the models are under the research directory. These are not
 always offcially maintained. 
@@ -514,7 +514,7 @@ Quick tip on setting up setting up:
 
 More resources included at the end.
 
-Any implementation you use will need to read in the iamges and annotations.
+Any implementation you use will need to read in the images and annotations.
 So keep it in mind that you'll want to check you're reading them correctly.
 
 Create TF record with our CSV file containing images and annotations:
@@ -567,7 +567,7 @@ def create_tf_example(group, path):
 
 ## Training the model
 
-I trained my model with the default settings in tensflow for about and hour and a half.
+I trained my model with the default settings in tensorflow for about and hour and a half.
 In my case that was 38k epochs. Our data set is small so each epoch is not long. 
 
 --------------
@@ -661,7 +661,7 @@ We could fix by adjusting the confidence
 - More data
 - More synthetic data. chairs...
 - Data with Shadows
-- Train longer. In my case the output was still showing improvments
+- Train longer. In my case the output was still showing improvements
 - More data augmentation
 - higher confidence for detection
 
@@ -675,8 +675,7 @@ We could fix by adjusting the confidence
 
 I hope this inspired you to make your own object detector or get started with computer vision in general! I think it's one of the coolest fields! 
 
-And even though we only scratced the surface I hope you got an idea of how powerful sythetic data sets have the potential to be! And you can start experimenting with them right now!
-
+And even though we only scratched the surface I hope you got an idea of how powerful synthetic data sets have the potential to be! And you can start experimenting with them right now!
 
 
 ## HyperLabel Give away
@@ -693,9 +692,9 @@ Enter here for a chance win a $75 doordash gift card to help support a local res
 
 - [Tensorflow object detection setup guide](https://gilberttanner.com/blog/creating-your-own-objectdetector)
 
-- [Make a mask detector using sythetic data](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
+- [Make a mask detector using synthetic data](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
 
-- [Make synthetic datsets with python](https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets)
+- [Make synthetic data sets with python](https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets)
 
 - [Racoon detection blog post](https://github.com/datitran/raccoon_dataset)
 
@@ -703,7 +702,7 @@ Enter here for a chance win a $75 doordash gift card to help support a local res
 
 - [Machine Learning Mastery](https://machinelearningmastery.com/)
 
-- [Pyimageseach](https://www.pyimagesearch.com/)
+- [Pyimagesearch](https://www.pyimagesearch.com/)
 
 - [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
 
