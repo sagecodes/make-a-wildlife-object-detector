@@ -582,9 +582,6 @@ In my case that was 38k epochs. Our data set is small so each epoch is not long.
 ![](pictures/gif3.gif)
 
 
-![](pictures/round1_goose.png)
-
-
 
 ## What happens if we were to change environments?
 
