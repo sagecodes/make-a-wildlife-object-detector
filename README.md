@@ -138,18 +138,10 @@ The types I'm excited about:
 - Images (Like we're going to make)
 - virtual cities / environments in a 3d space. Like unity for self driving cars. 
 
-
 Again if you have a project in mind, think about any variations that may be hard
 for you to capture yourself.
 
-
-Example use cases of synthtic datasets
-
-Different
-
-backgrounds, rotation, positions, object variations(cow example)
-
-
+Like different backgrounds, positions, colors, defect
 
 I think this idea is one of the coolest things, it's gaining traction
 but I'm still surprised that it's not talked about more!
@@ -609,7 +601,7 @@ Let's say now our goal is to detect geese in my apartment
 > me and the chair are geese
 ![](pictures/round1_me_chair.png)
 
-Using transfer learning even with out small dataset we did a pretty good job of
+Using transfer learning even with our small dataset we did a pretty good job of
 telling our model what a goose **IS**.
 
 But we didn't do a good job of telling it what a goose **ISN"T**.
@@ -664,13 +656,14 @@ It's not perfect
 We could fix by adjusting the confidence 
 
 
-## Future improvements:
+## Possible improvements:
 
 - More data
 - More synthetic data. chairs...
 - Data with Shadows
 - Train longer. In my case the output was still showing improvments
 - More data augmentation
+- higher confidence for detection
 
 --------------
 
