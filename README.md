@@ -257,10 +257,10 @@ ADD IMAGES OF USING HYPER LABEL & MAKE SCHEMA
 - Create Project
 
 - Add source
-![](sources.png)
+![](pictures/sources.png)
 
 - Create label schema
-![](pictures/schema.png.png)
+![](pictures/schema.png)
 
 - Label your photos by dragging boxes around them. 
 ![](pictures/labeling_goose_example2.png)
@@ -343,7 +343,7 @@ XML Example:
 ### Converting to a CSV file.
 
 You could skip the step of generating a CSV file and directly create a TF Record
-but I've found having a CSV file helpful in the past.
+or whatever type of input your model takes, but I've found having a CSV file helpful in the past.
 
 - A chance to pause and check your data
 - If your labeling tool doesn't save a project, you can append new annotation
@@ -380,14 +380,13 @@ main()
 
 ```
 
-
-#### OpenCV annotation check
+### Check your Annotations!
 
 Always check your annotations! I really wish someone had drilled this into me
 early. checking you read in your annotations correctly can save you a lot of
 time debugging.
 
-Use openCV to read the annotations
+Example: Using openCV to read the annotations
 
 ```python
 # %%
@@ -432,24 +431,49 @@ I was reading them correctly.
 
 Different types of computer vision applications require different models
 
-#### Common Models for Object Detection
+### Common Models for Object Detection
 
-- SSD
-- Yolo
-- Mask R-CNN
+#### Single Shot MultiBox Detector (SSD)
 
-#### Transfer learning
+- Object detection
+- Fast
 
-CNNs basics
-Weights
+[SSD exaplained](https://towardsdatascience.com/understanding-ssd-multibox-real-time-object-detection-in-deep-learning-495ef744fab)
+[paper](https://arxiv.org/abs/1512.02325)
+
+#### You Only Look Once (YOLO)
+
+- Object detection
+- Fast
+
+[Yolo Explained](https://medium.com/@jonathan_hui/real-time-object-detection-with-yolo-yolov2-28b1b93e2088)
+[paper](https://arxiv.org/abs/1506.02640)
+
+#### Mask R-CNN
+
+- Object detection
+- Image segmentation
+- High accuracy
+- Slower
+
+[Mask R-CNN explained](https://medium.com/@jonathan_hui/image-segmentation-with-mask-r-cnn-ebe6d793272)
+[Paper](https://arxiv.org/abs/1703.06870)
+
+
+#### A note on transfer learning
+
+Learned weights and convolution layers
 Imagenet dataset
 Coco dataset
 
-Minimum 200 images rule of thumb for transfer learning
+Minimum 200 images rule of thumb for transfer learning.
+Our goose dataset has less than 200 images, but over 200 instances of a goose.
 
 May need thousands without transfer learning. Keep in mind that synthetic data 
 may be a way to turn hundreds into thousands. Depends on you data and what
 you're doing with it. 
+
+[Transfer Learning Explained](https://towardsdatascience.com/a-comprehensive-hands-on-guide-to-transfer-learning-with-real-world-applications-in-deep-learning-212bf3b2f27a)
 
 #### Implementations
 
@@ -517,11 +541,8 @@ def create_tf_example(group, path):
 
 ## Training the model
 
-changes to work with different annotations
-
-I started with default settings
-
-But you can change them here:
+I trained my model with the default settings in tensflow for about and hour and a half.
+In my case that was 38k epochs. Our data set is small so each epoch is not long. 
 
 --------------
 
@@ -653,8 +674,12 @@ Again, thank you to HyperLabel fo sponsoring
 
 - [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb): online code editor with free GPU & TPU access.
 
+- Machine Learning Mastery
+
+- Pyimageseach
+
 ## Upcoming events:
 
-Tuning Deep neural networks
+- Tuning Deep neural networks
 
-Intro to Machine Learning
+- Intro to Machine Learning
