@@ -31,17 +31,17 @@ Where are you watching this from right now?
 
 I was thinking of ways to bring in sponsors to virtual events. 
 
-[hyperlabel](https://hyperlabel.com/) is the image labeling tool I used in this 
+[HyperLabel](https://hyperlabel.com/) is the image labeling tool I used in this 
 project and they agreed to be a sponsor!
 
-Hyperlabel will be giving 4 winners $25 each for door dash to help support 
+HyperLabel will be giving 4 winners $25 each for door dash to help support 
 your favorite local restaurants. 
 
 Enter to win here: [link]()
 
-Thank you [hyperlabel](https://hyperlabel.com/)!!!
+Thank you [HyperLabel](https://hyperlabel.com/)!!!
 
-[![hyperlabel image labeling logo](pictures/hyperLabelLogo.png)](https://hyperlabel.com/)
+[![HyperLabel image labeling logo](pictures/hyperLabelLogo.png)](https://hyperlabel.com/)
 
 --------------
 
@@ -76,7 +76,11 @@ When collecting think of what you want to capture:
 - Object variations
     - age
     - color
-    - type  
+    - type
+
+- Object environment
+    - Backgrounds
+
 
 This example I am creating a dataset of canadian geese. Fortunately for me.
 They don't have much variation in appearance.
@@ -199,7 +203,7 @@ There are a couple good labeling options
 - hyperlabel
 - imagelabeler
 
-I chose hyper label. Again shout out for them sponsoring tonight!
+I chose HyperLabel. Again shout out for them sponsoring tonight!
 
 Enter give away here [link]()
 
@@ -578,6 +582,8 @@ model is training it can learn when it makes a mistake on them.
 
 In total I added 10 new images with my living room or people in the background
 
+Sync HyperLabel project with new data
+
 Lets re-train our model and see the results
 
 ## Results:
@@ -603,6 +609,9 @@ more data
 
 more synthetic data. chairs
 
+Shadows
+
+
 
 
 --------------
@@ -626,13 +635,13 @@ twitter: [@sagecodes](https://twitter.com/sagecodes)
 site: [sageelliott.com](https://sageelliott.com/)
 
 
-## Hyper Label Give away
+## HyperLabel Give away
 
-Again, thank you to hyper label fo sponsoring
+Again, thank you to HyperLabel fo sponsoring
 
 ## Useful Resources:
 
-- [Hyper Label: Image labeling](https://hyperlabel.com/) used for labeling the images
+- [HyperLabel: Image labeling](https://hyperlabel.com/) used for labeling the images
 
 - [Tensorflow object detection setup guide](https://gilberttanner.com/blog/creating-your-own-objectdetector)
 
