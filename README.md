@@ -537,6 +537,10 @@ Add Examples of just geese
 
 Make video GIF of geese classification
 
+![](pictures/gif1.gif)
+![](pictures/gif2.gif)
+![](pictures/gif3.gif)
+
 
 ![](pictures/round1_goose.png)
 
