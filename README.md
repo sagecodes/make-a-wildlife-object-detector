@@ -2,19 +2,30 @@
 
 ## About this talk:
 
-There are lots of tutorials on making an object detector work with a pre-trained
+There are a lot of tutorials on making an object detector work with a pre-trained
 dataset, but not many on how to make your own datasets for object detection.
 
-Over coming Synthetic data
+We're going to talk about:
 
-Wildlife detection and monitoring with a limited dataset that anyone with a camera or smart phone can create
+- Collecting Data
+- Labeling your own data for object detection models
+- Overcoming several challenges by using Sythetic data sets.
+- Choosing a model
 
-I hope that no matter your experience you'll learn something new today!
 
 ## About me:
 👋 Hello,  I'm [Sage Elliott](https://www.linkedin.com/in/sageelliott/).
 
-I'm a technical evangelist at [Galvanize](https://www.galvanize.com/) with experience creating computer vision systems for manufacturing quality assurance, architecture design generation, and wildlife monitoring. I love helping people learn new things.
+I'm a technical evangelist at [Galvanize](https://www.galvanize.com/)!
+
+For the past decade I've worked as a software and hardware engineer with 
+Startups and Agencies in Seattle, WA and Melbourne, FL.
+I love making things with technology!
+
+In the past couple years I got into computer vision by using it to solve 
+a complicated manufacturing quality assurance problem. 
+
+Since then I've worked on some really cool projects around architecture design generation, and wildlife monitoring.
 
 I'm really excited to have you here for this this talk!
 Originally I was going to give this talk in person at a python meetup in
@@ -27,19 +38,21 @@ Where are you watching this from right now?
 
 
 
-## Sponsorship & Give away
-
-I was thinking of ways to bring in sponsors to virtual events. 
+## Co-hosting & Sponsorship 
 
 [HyperLabel](https://hyperlabel.com/) is the image labeling tool I used in this 
 project and they agreed to be a sponsor!
 
-HyperLabel will be giving 4 winners $25 each for door dash to help support 
+With me here today is Alex Robb from the HyperLabel team. 
+Alex will be hanging around after the talk if anyone has any questions for him.
+When he's not working Alex loves Skiing and Mountain Biking in the PNW.
+
+HyperLabel will be giving 4 winners $25 each for doordash to help support 
 your favorite local restaurants. 
 
-Enter to win here: [link]()
+Enter to win here: [https://bit.ly/givinggoose](https://docs.google.com/forms/d/e/1FAIpQLSeyXxjmNCJm0OvjtXMpeADhS0GFanKHPGba0LdWb8JULZq3qQ/viewform?usp=sf_link)
 
-Thank you [HyperLabel](https://hyperlabel.com/)!!!
+Thank you Alex & [HyperLabel](https://hyperlabel.com/) Team!!!
 
 [![HyperLabel image labeling logo](pictures/hyperLabelLogo.png)](https://hyperlabel.com/)
 
@@ -54,10 +67,12 @@ In this case I actually had a lot of fun!
 
 ## Collecting the data:
 
-I used my smart phone.
+For this project I wanted to collect data in a way that most people could.
+
+I just used my smart phone.
 
 Often you're going to reduce the resolution during your model training process, 
-so super high resolution doesn't matter too much.
+so taking photos at super high resolution often won't matter.
 
 When collecting think of what you want to capture:
 
@@ -81,6 +96,8 @@ When collecting think of what you want to capture:
 - Object environment
     - Backgrounds
 
+If you have an idea for a project, I want you to think of some variations you
+might need to capture.
 
 This example I am creating a dataset of canadian geese. Fortunately for me.
 They don't have much variation in appearance.
@@ -89,11 +106,17 @@ but I still need to take in account the first two
 
 In total I only took 87 photos. Many were very similar.
 
+I live near a park with plenty of geese so finding some was easy.
+
 > Example pictures:
 ![](pictures/collect1.jpg)
+
 ![](pictures/collect2.jpg)
+
 ![](pictures/collect3.jpg)
+
 ![](pictures/collect4.jpg)
+
 ![](pictures/collect5.jpg)
 
 
@@ -114,8 +137,11 @@ Types of synthetic
 
 Example use cases of synthtic datasets
 
+Different
 
-Different backgrounds, rotation, positions, object variations(cow example)
+backgrounds, rotation, positions, object variations(cow example)
+
+
 
 I think this idea is one of the coolest things, it's gaining traction
 but I'm still surprised that it's not talked about more!
@@ -125,8 +151,10 @@ asking how can I automate it?
 
 ### Creating our own sythetic data set
 
-we're going to come back to creating more extreme synthetic data
-after our initial training. 
+We're going to come back to creating more extreme synthetic data
+after our initial training to solve a new challenge which will show us how powerful
+it can be. 
+
 
 > Single Goose Example
 ![](pictures/single_goose.png)
@@ -140,19 +168,29 @@ after our initial training.
 ![](pictures/syn_swim3.png)
 ![](pictures/syn_bridge.png)
 
+Photoshop tips:
 
-ADD PHOTOSHOP TIPS
+- Object selction
+- Photoshop crop to content
+- save as a png (for transparent background)
+- Open up a background image in photoshop.
+- Drag your object in
+- Ctr + t free transform
+- import multiple backgrounds to make quickly
 
+You may already be asking can I automate this? Well you can automate some of
+the generation and part of the labeling with python. Read this article here:
+[Make synthetic datsets with python](https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets)
 
-### data augmentation
+I also think this could be an awesome feature to add into a tool, like HyperLabel.
 
-You may already be familiar with a more widely used concept of data augmentation
+### Data Augmentation
 
-What data augmentation is:
+You may already be familiar with a more widely used concept of data augmentation.
 
-What it isn't:
-
-
+This allows you to make adjustments to your images when training, like flipping
+, skewing, lightness, ect... but it does not create a different environment like
+our sythetic data set.
 
 
 ## Resizing the dataset:
@@ -194,6 +232,7 @@ Some other label options you may see in computer vision
 - Keypoint
 - context
 
+![](pictures/labeltypes.png)
 
 
 Our case we want to do object detection. The boxes around the objects.
@@ -205,27 +244,44 @@ There are a couple good labeling options
 
 I chose HyperLabel. Again shout out for them sponsoring tonight!
 
-Enter give away here [link]()
-
-keep in mind that every labeler may have slightly different annotation generation
+Enter give away here [https://bit.ly/givinggoose](https://docs.google.com/forms/d/e/1FAIpQLSeyXxjmNCJm0OvjtXMpeADhS0GFanKHPGba0LdWb8JULZq3qQ/viewform?usp=sf_link)
 
 
-What labeling looks like
+
+### What labeling looks like
 
 ADD IMAGES OF USING HYPER LABEL & MAKE SCHEMA
 
-![](pictures/image_bounding_box.png)
+- Open HyperLabel
 
+- Create Project
 
+- Add source
+![](sources.png)
 
+- Create label schema
+![](pictures/schema.png.png)
 
-Export:
-You get different export options
+- Label your photos by dragging boxes around them. 
+![](pictures/labeling_goose_example2.png)
 
-For me I'm using VOC pascal which exports the images and XML annotations of
-boudning boxes
+- Export your labels from the dashboard
+![](pictures/dashboard.png)
 
-Understanding the annotations
+### Exporting
+
+There are several options for exporting. You will need to choose the right one
+for your application. 
+
+For me I'm exporting as VOC pascal which exports the images and matching XML 
+annotations of boudning boxes for each images.
+
+- goose1.jpg
+- goose1.xml
+
+### Understanding the annotations
+
+keep in mind that every labeler may have slightly different annotation generation
 
 XML Example:
 
@@ -284,7 +340,7 @@ XML Example:
 </annotation>
 ```
 
-Converting to a CSV file.
+### Converting to a CSV file.
 
 You could skip the step of generating a CSV file and directly create a TF Record
 but I've found having a CSV file helpful in the past.
@@ -417,48 +473,6 @@ Create TF record with our CSV file containing images and annotations:
 
 ```python
 
-"""
-Usage:
-  # From tensorflow/models/
-  # Create train data:
-  python generate_tfrecord.py --csv_input=data/train_labels.csv  --output_path=train.record
-  # Create test data:
-  python generate_tfrecord.py --csv_input=data/test_labels.csv  --output_path=test.record
-"""
-from __future__ import division
-from __future__ import print_function
-from __future__ import absolute_import
-
-import os
-import io
-import pandas as pd
-import tensorflow as tf
-
-from PIL import Image
-from object_detection.utils import dataset_util
-from collections import namedtuple, OrderedDict
-
-flags = tf.app.flags
-flags.DEFINE_string('csv_input', '', 'Path to the CSV input')
-flags.DEFINE_string('output_path', '', 'Path to output TFRecord')
-flags.DEFINE_string('image_dir', '', 'Path to images')
-FLAGS = flags.FLAGS
-
-
-# TO-DO replace this with label map
-def class_text_to_int(row_label):
-    if row_label == 'goose':
-        return 1
-    else:
-        None
-
-
-def split(df, group):
-    data = namedtuple('data', ['filename', 'object'])
-    gb = df.groupby(group)
-    return [data(filename, gb.get_group(x)) for filename, x in zip(gb.groups.keys(), gb.groups)]
-
-
 def create_tf_example(group, path):
     with tf.gfile.GFile(os.path.join(path, '{}'.format(group.filename)), 'rb') as fid:
         encoded_jpg = fid.read()
@@ -498,24 +512,6 @@ def create_tf_example(group, path):
         'image/object/class/label': dataset_util.int64_list_feature(classes),
     }))
     return tf_example
-
-
-def main(_):
-    writer = tf.python_io.TFRecordWriter(FLAGS.output_path)
-    path = os.path.join(FLAGS.image_dir)
-    examples = pd.read_csv(FLAGS.csv_input)
-    grouped = split(examples, 'filename')
-    for group in grouped:
-        tf_example = create_tf_example(group, path)
-        writer.write(tf_example.SerializeToString())
-
-    writer.close()
-    output_path = os.path.join(os.getcwd(), FLAGS.output_path)
-    print('Successfully created the TFRecords: {}'.format(output_path))
-
-
-if __name__ == '__main__':
-    tf.app.run()
 
 ```
 
@@ -655,4 +651,10 @@ Again, thank you to HyperLabel fo sponsoring
 
 - [Racoon detection blog post](https://github.com/datitran/raccoon_dataset)
 
-Scripts I used:
+- [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb): online code editor with free GPU & TPU access.
+
+## Upcoming events:
+
+Tuning Deep neural networks
+
+Intro to Machine Learning
