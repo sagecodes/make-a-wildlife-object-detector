@@ -225,7 +225,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
     rescale_images(args.directory, args.size)
 ```
-
+[Original script from Gilbert Tanner](https://github.com/TannerGilbert/Tutorials/blob/master/Tensorflow%20Object%20Detection/object_detection_with_own_model.ipynb)
 
 ## Labeling the data 
 
@@ -246,8 +246,8 @@ Our case we want to do object detection. The boxes around the objects.
 
 There are a couple good labeling options
 
-- hyperlabel
-- imagelabeler
+- [HyperLabel](https://hyperlabel.com/)
+- [imagelabeler](https://github.com/tzutalin/labelImg)
 
 I chose HyperLabel. Again shout out for them sponsoring tonight!
 
@@ -384,6 +384,8 @@ def main():
 main()
 
 ```
+> Original script from Dat Trans [raccoon_dataset](https://github.com/datitran/raccoon_dataset)
+
 
 ### Check your Annotations!
 
@@ -550,6 +552,8 @@ def create_tf_example(group, path):
     return tf_example
 
 ```
+> Original script from Dat Trans [raccoon_dataset](https://github.com/datitran/raccoon_dataset)
+
 
 ## Training the model
 
@@ -619,7 +623,7 @@ model is training it can learn when it makes a mistake on them.
 > Image from unsplash (if you don't have images yourself you may be able to find the on the web)
 ![](pictures/syn_unsplash_crowd.png)
 
-In total I added 10 new images with my living room or people in the background
+In total I added just 10 new images with my living room or people in the background
 
 Sync HyperLabel project with new data
 
@@ -654,11 +658,15 @@ We could fix by adjusting the confidence
 
 # Wrap up
 
+
+
 ## Summary
 
 I hope this inspired you to make your own object detector or get started with computer vision in general! I think it's one of the coolest fields! 
 
 And even though we only scratced the surface I hope you got an idea of how powerful sythetic data sets have the potential to be! And you can start experimenting with them right now!
+
+
 
 ## HyperLabel Give away
 
