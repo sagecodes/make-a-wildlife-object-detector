@@ -47,7 +47,7 @@ With me here today is Alex Robb from the HyperLabel team.
 Alex will be hanging around after the talk if anyone has any questions for him.
 When he's not working Alex loves Skiing and Mountain Biking in the PNW.
 
-HyperLabel will be giving 4 winners $25 each for doordash to help support 
+HyperLabel will be giving 4 winners $75 each for doordash to help support 
 your favorite local restaurants. 
 
 Enter to win here: [https://bit.ly/givinggoose](https://docs.google.com/forms/d/e/1FAIpQLSeyXxjmNCJm0OvjtXMpeADhS0GFanKHPGba0LdWb8JULZq3qQ/viewform?usp=sf_link)
@@ -94,7 +94,10 @@ When collecting think of what you want to capture:
     - type
 
 - Object environment
-    - Backgrounds
+    - backgrounds
+    - lighting
+    - weather
+
 
 If you have an idea for a project, I want you to think of some variations you
 might need to capture.
@@ -463,8 +466,9 @@ Different types of computer vision applications require different models
 #### A note on transfer learning
 
 Learned weights and convolution layers
-Imagenet dataset
-Coco dataset
+
+- [Imagenet dataset](http://www.image-net.org/)
+- [Coco dataset](http://cocodataset.org/#home)
 
 Minimum 200 images rule of thumb for transfer learning.
 Our goose dataset has less than 200 images, but over 200 instances of a goose.
@@ -548,11 +552,8 @@ In my case that was 38k epochs. Our data set is small so each epoch is not long.
 
 # Results
 
-our initial results
-
-Add Examples of just geese
-
-Make video GIF of geese classification
+![](pictures/geese_predict1.png)
+![](pictures/predict_babies.png)
 
 ![](pictures/gif1.gif)
 ![](pictures/gif2.gif)
@@ -561,30 +562,30 @@ Make video GIF of geese classification
 
 ![](pictures/round1_goose.png)
 
-![](pictures/round1_me_chair.png)
-
-![](pictures/round1_me_goose.png)
-
-![](pictures/round1_me.png)
-
-![](pictures/round1)
 
 
+## What happens if we were to change environments?
 
 Let's say now our goal is to detect geese in my apartment
 
-I'm a goose!
+> It's very sure I'm a goose!
 
-transfer learning we didn't do a good enough job of telling it what WASN't a
-goose
+![](pictures/round1_me.png)
+
+> It's pretty sure I'm a goose!
+
+![](pictures/round1_me_goose.png)
+
+> me and the chair are geese
+![](pictures/round1_me_chair.png)
+
+Using transfer learning even with out small dataset we did a pretty good job of
+telling our model what a goose **IS**.
+
+But we didn't do a good job of telling it what a goose **ISN"T**.
 
 
-## Retrainig with synthtic dataset of living room
-
-Even with out small dataset we did a pretty good job of telling our model
-what a goose IS.
-
-But we didn't do a good job of telling it what a goose ISN"T.
+## Synthtic dataset #2 Feat: living room
 
 We want to add in some noise to the data, like objects and people so as the
 model is training it can learn when it makes a mistake on them.
@@ -592,13 +593,22 @@ model is training it can learn when it makes a mistake on them.
 
 ## Create data set with living room:
 
+> Geese in my living room!
 ![](pictures/syn_label_living_room.png)
+
+> Very disruptive to my work
 ![](pictures/syn_label_selfie1.png)
+
+> I'm over it
 ![](pictures/syn_label_selfie2.png)
+
+> They even followed me on vacation....
 ![](pictures/syn_label_stone.png)
+
+> Geese invade Galvanize rooftop!
 ![](pictures/syn_label_galvanize_roof.png)
 
-> Image from unsplash
+> Image from unsplash (if you don't have images yourself you may be able to find the on the web)
 ![](pictures/syn_unsplash_crowd.png)
 
 In total I added 10 new images with my living room or people in the background
@@ -607,7 +617,7 @@ Sync HyperLabel project with new data
 
 Lets re-train our model and see the results
 
-## Results:
+## Results #2:
 
 ![](pictures/round2_me.png)
 
@@ -626,14 +636,9 @@ We could fix by adjusting the confidence
 
 ## Future improvements:
 
-more data
-
-more synthetic data. chairs
-
-Shadows
-
-
-
+- More data
+- More synthetic data. chairs...
+- Data with Shadows
 
 --------------
 
@@ -650,15 +655,19 @@ And how powerful sythetic data sets have the potential to be!
 Please feel free to reach out to me with any questions. 
 I love helping other learn.
 
-this github repo: [goose.sage.codes](https://github.com/sagecodes/make-a-wildlife-object-detector)
-linkedin: [Sage Elliott](https://www.linkedin.com/in/sageelliott/)
-twitter: [@sagecodes](https://twitter.com/sagecodes)
-site: [sageelliott.com](https://sageelliott.com/)
+- this github repo: [goose.sage.codes](https://github.com/sagecodes/make-a-wildlife-object-detector)
+- linkedin: [Sage Elliott](https://www.linkedin.com/in/sageelliott/)
+- twitter: [@sagecodes](https://twitter.com/sagecodes)
+- site: [sageelliott.com](https://sageelliott.com/)
 
 
 ## HyperLabel Give away
 
-Again, thank you to HyperLabel fo sponsoring
+Again, thank you to HyperLabel and Alex for sponsoring and hanging out tonight.
+
+Enter here for a chance win a $75 doordash gift card to help support a local restaurant: [https://bit.ly/givinggoose](https://docs.google.com/forms/d/e/1FAIpQLSeyXxjmNCJm0OvjtXMpeADhS0GFanKHPGba0LdWb8JULZq3qQ/viewform?usp=sf_link)
+
+
 
 ## Useful Resources:
 
@@ -666,7 +675,7 @@ Again, thank you to HyperLabel fo sponsoring
 
 - [Tensorflow object detection setup guide](https://gilberttanner.com/blog/creating-your-own-objectdetector)
 
-- [Another good tensorflow object tutorial](https://www.youtube.com/watch?v=Rgpfk6eYxJA&t=1024s)
+- [Make a mask detector using sythetic data](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
 
 - [Make synthetic datsets with python](https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets)
 
@@ -674,12 +683,18 @@ Again, thank you to HyperLabel fo sponsoring
 
 - [Google Colab](https://colab.research.google.com/notebooks/intro.ipynb): online code editor with free GPU & TPU access.
 
-- Machine Learning Mastery
+- [Machine Learning Mastery](https://machinelearningmastery.com/)
 
-- Pyimageseach
+- [Pyimageseach](https://www.pyimagesearch.com/)
 
 ## Upcoming events:
 
-- Tuning Deep neural networks
+- [Deep Learning Design Patterns Study Jams - Overview](https://www.meetup.com/gdg-seattle/events/270036681/) 5/7(TODAY) 7:00pm PDT
 
-- Intro to Machine Learning
+- [Intro to Machine Learning workshop](https://www.eventbrite.com/e/intro-to-machine-learning-tickets-103360447882) Tue 5/12 5:30pm PDT
+
+## Thank you for coming!
+
+![](pictures/slu_geese.png)
+
+- this github repo: [goose.sage.codes](https://github.com/sagecodes/make-a-wildlife-object-detector)
