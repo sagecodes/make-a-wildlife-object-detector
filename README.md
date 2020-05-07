@@ -113,13 +113,9 @@ I live near a park with plenty of geese so finding some was easy.
 
 > Example pictures:
 ![](pictures/collect1.jpg)
-
 ![](pictures/collect2.jpg)
-
 ![](pictures/collect3.jpg)
-
 ![](pictures/collect4.jpg)
-
 ![](pictures/collect5.jpg)
 
 
@@ -136,7 +132,12 @@ I live near a park with plenty of geese so finding some was easy.
 
 What is sythetic data
 
-Types of synthetic
+
+The types I'm excited about:
+
+- Images (Like we're goingto make)
+- virtual worlds / environments in a 3d space. Like unity. 
+
 
 Example use cases of synthtic datasets
 
@@ -149,8 +150,6 @@ backgrounds, rotation, positions, object variations(cow example)
 I think this idea is one of the coolest things, it's gaining traction
 but I'm still surprised that it's not talked about more!
 
-This example I made my synthetic dataset manually, but you're probably already
-asking how can I automate it?
 
 ### Creating our own sythetic data set
 
@@ -182,8 +181,11 @@ Photoshop tips:
 - import multiple backgrounds to make quickly
 
 You may already be asking can I automate this? Well you can automate some of
-the generation and part of the labeling with python. Read this article here:
+the generation and part of the labeling with python. Read these here for some ideas! 
+
 [Make synthetic datsets with python](https://www.immersivelimit.com/tutorials/composing-images-with-python-for-synthetic-datasets)
+
+[Pyimagesearch: Face mask detection](https://www.pyimagesearch.com/2020/05/04/covid-19-face-mask-detector-with-opencv-keras-tensorflow-and-deep-learning/)
 
 I also think this could be an awesome feature to add into a tool, like HyperLabel.
 
@@ -194,6 +196,8 @@ You may already be familiar with a more widely used concept of data augmentation
 This allows you to make adjustments to your images when training, like flipping
 , skewing, lightness, ect... but it does not create a different environment like
 our sythetic data set.
+
+This is usually done while training the model
 
 
 ## Resizing the dataset:
@@ -252,8 +256,6 @@ Enter give away here [https://bit.ly/givinggoose](https://docs.google.com/forms/
 
 
 ### What labeling looks like
-
-ADD IMAGES OF USING HYPER LABEL & MAKE SCHEMA
 
 - Open HyperLabel
 
@@ -483,19 +485,25 @@ you're doing with it.
 
 There are quite a few implementations for different model types. 
 
-I chose to use ones included in tensorflows offcial repo. I feel like it's
-maybe the most approachable for most people
+I chose to use ones included in [tensorflows offcial repo](https://github.com/tensorflow/models/tree/master/research/object_detection).
 
 Note that most of the models are under the research directory. These are not
 always offcially maintained. 
 
 There is a great resource to get started with the included tensflow model here:
+- [Tensorflow object detection setup guide](https://gilberttanner.com/blog/creating-your-own-objectdetector)
+- [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
 
-Setup tips Quick summary of setting up:
+Quick tip on setting up setting up:
 
-TF & Python versions
+- Python 3.6
+- Tensorflow 1.15
+- Numpy 1.17
 
 More resources included at the end.
+
+Any implementation you use will need to read in the iamges and annotations.
+So keep it in mind that you'll want to check you're reading them correctly.
 
 Create TF record with our CSV file containing images and annotations:
 
@@ -639,6 +647,8 @@ We could fix by adjusting the confidence
 - More data
 - More synthetic data. chairs...
 - Data with Shadows
+- Train longer. In my case the output was still showing improvments
+- More data augmentation
 
 --------------
 
@@ -646,20 +656,9 @@ We could fix by adjusting the confidence
 
 ## Summary
 
-I hope this inspired you to make your own object detector or get started with computer vision!
+I hope this inspired you to make your own object detector or get started with computer vision in general! I think it's one of the coolest fields! 
 
-And how powerful sythetic data sets have the potential to be!
-
-## Stay connected:
-
-Please feel free to reach out to me with any questions. 
-I love helping other learn.
-
-- this github repo: [goose.sage.codes](https://github.com/sagecodes/make-a-wildlife-object-detector)
-- linkedin: [Sage Elliott](https://www.linkedin.com/in/sageelliott/)
-- twitter: [@sagecodes](https://twitter.com/sagecodes)
-- site: [sageelliott.com](https://sageelliott.com/)
-
+And even though we only scratced the surface I hope you got an idea of how powerful sythetic data sets have the potential to be! And you can start experimenting with them right now!
 
 ## HyperLabel Give away
 
@@ -687,6 +686,8 @@ Enter here for a chance win a $75 doordash gift card to help support a local res
 
 - [Pyimageseach](https://www.pyimagesearch.com/)
 
+- [Tensorflow Model Zoo](https://github.com/tensorflow/models/blob/master/research/object_detection/g3doc/detection_model_zoo.md)
+
 ## Upcoming events:
 
 - [Deep Learning Design Patterns Study Jams - Overview](https://www.meetup.com/gdg-seattle/events/270036681/) 5/7(TODAY) 7:00pm PDT
@@ -697,4 +698,12 @@ Enter here for a chance win a $75 doordash gift card to help support a local res
 
 ![](pictures/slu_geese.png)
 
+## Stay connected:
+
+Please feel free to reach out to me with any questions. 
+I love helping other learn.
+
 - this github repo: [goose.sage.codes](https://github.com/sagecodes/make-a-wildlife-object-detector)
+- linkedin: [Sage Elliott](https://www.linkedin.com/in/sageelliott/)
+- twitter: [@sagecodes](https://twitter.com/sagecodes)
+- site: [sageelliott.com](https://sageelliott.com/)
