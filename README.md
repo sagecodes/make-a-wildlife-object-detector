@@ -130,13 +130,17 @@ I live near a park with plenty of geese so finding some was easy.
 
 ### Synthetic data 
 
-What is sythetic data
-
+Synthetic data sets allows us to train on data that we anticipate but we were
+not able to capture.
 
 The types I'm excited about:
 
-- Images (Like we're goingto make)
-- virtual worlds / environments in a 3d space. Like unity. 
+- Images (Like we're going to make)
+- virtual cities / environments in a 3d space. Like unity for self driving cars. 
+
+
+Again if you have a project in mind, think about any variations that may be hard
+for you to capture yourself.
 
 
 Example use cases of synthtic datasets
