@@ -1,5 +1,7 @@
 # Welcome!
 
+This repo was originally made for a talk. You can watch it [here](https://www.youtube.com/watch?v=vo0E7xE6WP4&t=2921s).
+
 ## About this talk:
 
 There are a lot of tutorials on making an object detector work with a pre-trained
